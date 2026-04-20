@@ -155,12 +155,12 @@ const Home = () => {
                         <button 
                             onClick={() => setSortBy('latest')}
                             className={sortBy === 'latest' ? 'primary' : ''}
-                            style={{ padding: '0.5rem 1.2rem', borderRadius: '12px', cursor: 'pointer', border: '1px solid var(--glass-border)', background: sortBy === 'latest' ? 'var(--primary)' : 'transparent', color: 'white' }}
+                            style={{ padding: '0.5rem 1.2rem', borderRadius: '12px', cursor: 'pointer', border: '1px solid var(--glass-border)', background: sortBy === 'latest' ? 'var(--primary)' : 'rgba(0,0,0,0.03)', color: sortBy === 'latest' ? 'white' : 'var(--text-main)' }}
                         >Latest</button>
                         <button 
                             onClick={() => setSortBy('likes')}
                             className={sortBy === 'likes' ? 'primary' : ''}
-                            style={{ padding: '0.5rem 1.2rem', borderRadius: '12px', cursor: 'pointer', border: '1px solid var(--glass-border)', background: sortBy === 'likes' ? 'var(--primary)' : 'transparent', color: 'white' }}
+                            style={{ padding: '0.5rem 1.2rem', borderRadius: '12px', cursor: 'pointer', border: '1px solid var(--glass-border)', background: sortBy === 'likes' ? 'var(--primary)' : 'rgba(0,0,0,0.03)', color: sortBy === 'likes' ? 'white' : 'var(--text-main)' }}
                         >🔥 Most Liked</button>
                     </div>
 
@@ -177,9 +177,9 @@ const Home = () => {
                                 key={range.label}
                                 onClick={() => handleRangeFilter(range.min, range.max)}
                                 style={{
-                                    background: (minRating === range.min && maxRating === range.max) ? 'var(--primary)' : 'rgba(255,255,255,0.05)',
+                                    background: (minRating === range.min && maxRating === range.max) ? 'var(--primary)' : 'rgba(0,0,0,0.03)',
                                     border: '1px solid var(--glass-border)',
-                                    color: 'white', padding: '0.5rem 1rem', borderRadius: '50px', cursor: 'pointer', fontSize: '0.85rem'
+                                    color: (minRating === range.min && maxRating === range.max) ? 'white' : 'var(--text-main)', padding: '0.5rem 1rem', borderRadius: '50px', cursor: 'pointer', fontSize: '0.85rem'
                                 }}
                             >{range.label}</button>
                         ))}

@@ -77,7 +77,7 @@ const Admin = () => {
             {selectedUser && (
                 <div style={{
                     position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
-                    background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(10px)',
+                    background: 'rgba(240, 242, 255, 0.9)', backdropFilter: 'blur(20px)',
                     display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000,
                     padding: '1rem'
                 }}>
@@ -89,19 +89,19 @@ const Admin = () => {
                             onClick={() => setSelectedUser(null)}
                             style={{ 
                                 position: 'absolute', top: '1.5rem', right: '1.5rem', 
-                                background: 'none', border: 'none', color: 'white', fontSize: '1.5rem', cursor: 'pointer' 
+                                background: 'none', border: 'none', color: 'var(--text-main)', fontSize: '1.5rem', cursor: 'pointer' 
                             }}
                         >&times;</button>
                         
                         <h2 style={{ marginBottom: '0.5rem' }}>Violation <span className="text-gradient">History</span></h2>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem' }}>
                             <p style={{ color: 'var(--text-muted)', margin: 0 }}>
-                                Registry logs for citizen <strong style={{ color: 'white' }}>@{selectedUser.Username}</strong>.
+                                Registry logs for citizen <strong style={{ color: 'var(--text-main)' }}>@{selectedUser.Username}</strong>.
                             </p>
                             {selectedUser.BannedUntil && new Date(selectedUser.BannedUntil) > new Date() && (
                                 <div style={{ textAlign: 'right' }}>
                                     <div style={{ fontSize: '0.7rem', color: '#ff5555', textTransform: 'uppercase', fontWeight: 'bold' }}>Current Ban Expires</div>
-                                    <div style={{ color: 'white', fontWeight: 'bold' }}>{new Date(selectedUser.BannedUntil).toLocaleString()}</div>
+                                    <div style={{ color: 'var(--text-main)', fontWeight: 'bold' }}>{new Date(selectedUser.BannedUntil).toLocaleString()}</div>
                                 </div>
                             )}
                         </div>
@@ -114,7 +114,7 @@ const Admin = () => {
                                 
                                 return (
                                     <div key={index} style={{ 
-                                        background: 'rgba(255,255,255,0.03)', padding: '1.2rem', 
+                                        background: 'rgba(0,0,0,0.03)', padding: '1.2rem', 
                                         borderRadius: '12px', borderLeft: '4px solid #ff5555' 
                                     }}>
                                         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
@@ -125,7 +125,7 @@ const Admin = () => {
                                                 {dateStr}
                                             </div>
                                         </div>
-                                        <div style={{ color: 'white', fontStyle: 'italic', lineHeight: '1.5' }}>
+                                        <div style={{ color: 'var(--text-main)', fontStyle: 'italic', lineHeight: '1.5' }}>
                                             "{commentText}"
                                         </div>
                                     </div>
@@ -154,15 +154,15 @@ const Admin = () => {
                 <button 
                     onClick={() => setActiveTab('moderation')}
                     style={{ 
-                        background: activeTab === 'moderation' ? 'var(--primary)' : 'rgba(255,255,255,0.05)',
-                        border: '1px solid var(--glass-border)', color: 'white', padding: '1rem 2rem', borderRadius: '16px', cursor: 'pointer', fontWeight: 'bold' 
+                        background: activeTab === 'moderation' ? 'var(--primary)' : 'rgba(0,0,0,0.03)',
+                        border: '1px solid var(--glass-border)', color: activeTab === 'moderation' ? 'white' : 'var(--text-main)', padding: '1rem 2rem', borderRadius: '16px', cursor: 'pointer', fontWeight: 'bold' 
                     }}
                 >Moderation Queue ({blockedReviews.length})</button>
                 <button 
                     onClick={() => setActiveTab('users')}
                     style={{ 
-                        background: activeTab === 'users' ? 'var(--primary)' : 'rgba(255,255,255,0.05)',
-                        border: '1px solid var(--glass-border)', color: 'white', padding: '1rem 2rem', borderRadius: '16px', cursor: 'pointer', fontWeight: 'bold' 
+                        background: activeTab === 'users' ? 'var(--primary)' : 'rgba(0,0,0,0.03)',
+                        border: '1px solid var(--glass-border)', color: activeTab === 'users' ? 'white' : 'var(--text-main)', padding: '1rem 2rem', borderRadius: '16px', cursor: 'pointer', fontWeight: 'bold' 
                     }}
                 >User Management</button>
             </div>
@@ -234,9 +234,9 @@ const Admin = () => {
                             {users.map(u => {
                                 const isBanned = u.IsBanned || (u.BannedUntil && new Date(u.BannedUntil) > new Date());
                                 return (
-                                    <tr key={u.UserID} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', opacity: u.Role === 'Admin' ? 0.6 : 1 }}>
+                                    <tr key={u.UserID} style={{ borderBottom: '1px solid var(--glass-border)', opacity: u.Role === 'Admin' ? 0.6 : 1 }}>
                                         <td style={{ padding: '1rem' }}>
-                                            <div style={{ fontWeight: 'bold', color: u.Role === 'Admin' ? 'var(--accent)' : 'white' }}>{u.Username} {u.Role === 'Admin' && '🛡️'}</div>
+                                            <div style={{ fontWeight: 'bold', color: u.Role === 'Admin' ? 'var(--accent)' : 'var(--text-main)' }}>{u.Username} {u.Role === 'Admin' && '🛡️'}</div>
                                             <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{u.Email}</div>
                                         </td>
                                         <td style={{ padding: '1rem' }}>

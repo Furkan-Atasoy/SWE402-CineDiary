@@ -18,10 +18,6 @@ build/
 .DS_Store
 Thumbs.db
 
-# Documentation (As requested to be ignored from Git)
-report.md
-SYSTEM_DOCUMENTATION.md
-
 # Application Data
 *.db
 *.sqlite

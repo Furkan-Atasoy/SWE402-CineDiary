@@ -42,9 +42,9 @@ const ReviewCard = ({ review, onAdminDelete, isLikedInitial = false }) => {
     return (
         <div className="card review-card">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
-                <h3 style={{ margin: 0, fontSize: '1.2rem', color: 'white' }}>{review.TitleNormalized}</h3>
+                <h3 style={{ margin: 0, fontSize: '1.2rem', color: 'var(--text-main)' }}>{review.TitleNormalized}</h3>
                 <div style={{
-                    background: 'rgba(255,255,255,0.05)',
+                    background: 'rgba(0,0,0,0.03)',
                     padding: '0.4rem 0.8rem',
                     borderRadius: '12px',
                     border: `1px solid ${ratingColor(review.Rating)}44`,
@@ -62,7 +62,7 @@ const ReviewCard = ({ review, onAdminDelete, isLikedInitial = false }) => {
 
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--gradient)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 'bold' }}>
+                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--gradient)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 'bold', color: 'white' }}>
                         {review.Username?.charAt(0).toUpperCase() || '?'}
                     </div>
                     <div>

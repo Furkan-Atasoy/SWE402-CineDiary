@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
 
 :root {
-  --primary: #8a2be2;
-  --primary-glow: rgba(138, 43, 226, 0.4);
-  --accent: #00f5d4;
-  --bg: #050505;
-  --surface: #111111;
-  --glass: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --text-main: #ffffff;
-  --text-muted: #a0a0a0;
-  --gradient: linear-gradient(135deg, #8a2be2 0%, #4b0082 100%);
+  --primary: #6d28d9;
+  --primary-glow: rgba(109, 40, 217, 0.2);
+  --accent: #059669;
+  --bg: #f8f9ff;
+  --surface: #ffffff;
+  --glass: rgba(0, 0, 0, 0.02);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --gradient: linear-gradient(135deg, #6d28d9 0%, #4338ca 100%);
 }
 
 * {
@@ -49,7 +49,7 @@ body {
   top: 0;
   z-index: 1000;
   padding: 1.2rem 5%;
-  background: rgba(5, 5, 5, 0.7);
+  background: rgba(248, 249, 255, 0.8);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--glass-border);
   display: flex;
@@ -61,7 +61,7 @@ body {
   font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: -1px;
-  background: linear-gradient(to right, #ffffff, var(--accent));
+  background: linear-gradient(to right, var(--primary), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -156,7 +156,7 @@ main {
   line-height: 1.1;
   margin-bottom: 1.5rem;
   letter-spacing: -2px;
-  background: linear-gradient(to bottom, #fff, #888);
+  background: linear-gradient(to bottom, #111827, #4b5563);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -201,7 +201,7 @@ main {
 .card:hover {
   transform: translateY(-10px);
   border-color: var(--primary);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px var(--primary-glow);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05), 0 0 20px var(--primary-glow);
 }
 
 .rating-badge {
@@ -239,11 +239,11 @@ label {
 
 input, textarea, select {
   width: 100%;
-  background: rgba(255,255,255,0.05);
+  background: #ffffff;
   border: 1px solid var(--glass-border);
   padding: 1rem 1.5rem;
   border-radius: 16px;
-  color: white;
+  color: var(--text-main);
   font-size: 1rem;
   transition: all 0.3s;
   outline: none;

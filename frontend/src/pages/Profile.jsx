@@ -112,7 +112,7 @@ const Profile = () => {
                                 <select
                                     value={newReview.visibility}
                                     onChange={e => setNewReview({ ...newReview, visibility: e.target.value })}
-                                    style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--glass-border)', color: 'white' }}
+                                    style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', background: '#ffffff', border: '1px solid var(--glass-border)', color: 'var(--text-main)' }}
                                 >
                                     <option value="Public">Public</option>
                                     <option value="Private">Private</option>
@@ -127,7 +127,7 @@ const Profile = () => {
                                 value={newReview.comment}
                                 onChange={e => setNewReview({ ...newReview, comment: e.target.value })}
                                 required
-                                style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--glass-border)', color: 'white', resize: 'vertical' }}
+                                style={{ width: '100%', padding: '0.8rem', borderRadius: '12px', background: '#ffffff', border: '1px solid var(--glass-border)', color: 'var(--text-main)', resize: 'vertical' }}
                             ></textarea>
                         </div>
                         <button type="submit" className="primary" style={{ width: '100%' }}>Post Review</button>
@@ -147,7 +147,7 @@ const Profile = () => {
                             style={{ 
                                 background: activeTab === 'my' ? 'var(--primary)' : 'transparent',
                                 border: `1px solid ${activeTab === 'my' ? 'var(--primary)' : 'var(--glass-border)'}`,
-                                color: 'white', padding: '0.8rem 1.5rem', borderRadius: '14px', cursor: 'pointer', fontWeight: 'bold' 
+                                color: activeTab === 'my' ? 'white' : 'var(--text-main)', padding: '0.8rem 1.5rem', borderRadius: '14px', cursor: 'pointer', fontWeight: 'bold' 
                             }}
                         >My Dictionary</button>
                         <button 
@@ -155,7 +155,7 @@ const Profile = () => {
                             style={{ 
                                 background: activeTab === 'liked' ? 'var(--primary)' : 'transparent',
                                 border: `1px solid ${activeTab === 'liked' ? 'var(--primary)' : 'var(--glass-border)'}`,
-                                color: 'white', padding: '0.8rem 1.5rem', borderRadius: '14px', cursor: 'pointer', fontWeight: 'bold' 
+                                color: activeTab === 'liked' ? 'white' : 'var(--text-main)', padding: '0.8rem 1.5rem', borderRadius: '14px', cursor: 'pointer', fontWeight: 'bold' 
                             }}
                         >❤️ Liked Reviews</button>
                     </div>
